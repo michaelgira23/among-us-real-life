@@ -1,0 +1,30 @@
+{
+	"name": "umumhungogus",
+	"version": "1.0.0",
+	"description": "gamer",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "node src/index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/michaelgira23/umumhungogus.git"
+	},
+	"keywords": [
+		"among",
+		"us"
+	],
+	"author": "Michael Gira",
+	"license": "UNLICENSED",
+	"bugs": {
+		"url": "https://github.com/michaelgira23/umumhungogus/issues"
+	},
+	"homepage": "https://github.com/michaelgira23/umumhungogus#readme",
+	"dependencies": {
+		"express": "^4.17.1",
+		"lodash": "^4.17.21",
+		"socket.io": "^4.1.1",
+		"uuid": "^8.3.2"
+	}
+}
