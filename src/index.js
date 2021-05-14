@@ -23,12 +23,12 @@ const TASKS = [
 	'Beat Smash (Upstairs guest room)',
 	'Hit a layup (Basketball court)',
 	'Take photo (Green screen)',
-	'Mess with Jack (basement)',
+	// 'Mess with Jack (basement)',
 	'Bounce ping pong ball 10 times (front door)',
 	'Take a lap (Around pool)',
 	'Flip a pillow (Activity room)'
 ];
-const N_TASKS = 6;
+const N_TASKS = 5;
 const N_IMPOSTORS = 1;
 
 let taskProgress = {};
