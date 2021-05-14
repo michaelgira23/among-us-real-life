@@ -26,6 +26,10 @@ socket.on('play-meeting', async () => {
 	await SOUNDS.sussyBoy.play();
 });
 
+socket.on('play-win', async () => {
+	await SOUNDS.youWin.play();
+});
+
 const startGame$ = document.querySelector('#start-game');
 
 startGame$.addEventListener('click', () => {

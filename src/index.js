@@ -133,6 +133,10 @@ function emitTaskProgress() {
 	const completed = tasks.filter(task => task).length;
 	const total = completed / tasks.length;
 	io.emit('progress', total);
+
+	if (total === 1) {
+		io.emit('play-win');
+	}
 }
 
 server.listen(PORT, () => console.log(`Server listening on *:${PORT}`));

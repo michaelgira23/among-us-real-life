@@ -6,6 +6,7 @@ const socket = io({
 
 const emergencyMeeting$ = document.querySelector('#emergency-meeting');
 const progress$ = document.querySelector('#progress');
+const progressBar$ = document.querySelector('.progress-bar');
 const report$ = document.querySelector('#report');
 const tasks$ = document.querySelector('#tasks');
 
@@ -70,4 +71,5 @@ function hideRole() {
 
 socket.on('progress', progress => {
 	progress$.innerHTML = (progress * 100).toFixed(0);
+	progressBar$.style.width = `${progress * 100}%`;
 });
