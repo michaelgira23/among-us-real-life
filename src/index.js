@@ -13,15 +13,18 @@ const io = new Server(server);
 
 const TASKS = [
 	"Do 10 reps of machine exercise (Joe's Gym)",
-	'Pour water (Pool)',
+	'Pour water (Kitchen)',
 	'Sink 1 ball (Billards table)',
-	'Flip water bottle (Dinning room)',
+	"Flip water bottle (Michael's room)",
 	'Wash your hands (basement bathroom)',
 	'Wash your hands (1st floor bathroom)',
 	'Take elevator',
-	'Spin 8, 9, or 10 in Life game (Hearth room)'
+	'Spin 8, 9, or 10 in Life game (Hearth room)',
+	'Beat Smash (Upstairs guest room)',
+	'Hit a layup (Basketball court)',
+	'Take photo (Green screen)'
 ];
-const N_TASKS = 3;
+const N_TASKS = 5;
 const N_IMPOSTORS = 1;
 
 let taskProgress = {};
@@ -103,6 +106,8 @@ io.on('connection', socket => {
 				socket.emit('tasks', playerTasks[id]);
 			}
 		}
+
+		emitTaskProgress();
 	});
 
 	socket.on('report', () => {

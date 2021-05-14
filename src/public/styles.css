@@ -11,3 +11,7 @@ button {
 img {
 	width: 100%;
 }
+
+#enable-sound {
+	display: block;
+}

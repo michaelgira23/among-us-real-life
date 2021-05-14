@@ -5,6 +5,7 @@ const socket = io({
 });
 
 const emergencyMeeting$ = document.querySelector('#emergency-meeting');
+const enableSound$ = document.querySelector('#enable-sound');
 const progress$ = document.querySelector('#progress');
 const progressBar$ = document.querySelector('.progress-bar');
 const report$ = document.querySelector('#report');
@@ -73,3 +74,45 @@ socket.on('progress', progress => {
 	progress$.innerHTML = (progress * 100).toFixed(0);
 	progressBar$.style.width = `${progress * 100}%`;
 });
+
+/**
+ * Sounds
+ */
+
+async function wait(milliseconds) {
+	await new Promise(resolve => {
+		setTimeout(() => resolve(), milliseconds);
+	});
+}
+
+const soundPlayer = new Audio();
+const SOUNDS = {
+	meeting: '/sounds/meeting.mp3',
+	sabotage: '/sounds/sabotage.mp3',
+	start: '/sounds/start.mp3',
+	sussyBoy: '/sounds/sussy-boy.mp3',
+	voteResult: '/sounds/vote-result.mp3',
+	youLose: '/sounds/you-lose.mp3',
+	youWin: '/sounds/you-win.mp3'
+};
+
+socket.on('play-meeting', async () => {
+	await playSound(SOUNDS.meeting);
+	await wait(2000);
+	await playSound(SOUNDS.sussyBoy);
+});
+
+socket.on('play-win', async () => {
+	await playSound(SOUNDS.youWin);
+});
+
+enableSound$.addEventListener('click', async () => {
+	console.log('enable sound');
+	enableSound$.style.display = 'none';
+	soundPlayer.play();
+});
+
+async function playSound(url) {
+	soundPlayer.src = url;
+	await soundPlayer.play();
+}

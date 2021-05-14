@@ -4,6 +4,16 @@ const socket = io({
 	}
 });
 
+const startGame$ = document.querySelector('#start-game');
+
+startGame$.addEventListener('click', () => {
+	socket.emit('start-game');
+});
+
+/**
+ * Sounds
+ */
+
 async function wait(milliseconds) {
 	await new Promise(resolve => {
 		setTimeout(() => resolve(), milliseconds);
@@ -28,10 +38,4 @@ socket.on('play-meeting', async () => {
 
 socket.on('play-win', async () => {
 	await SOUNDS.youWin.play();
-});
-
-const startGame$ = document.querySelector('#start-game');
-
-startGame$.addEventListener('click', () => {
-	socket.emit('start-game');
 });
