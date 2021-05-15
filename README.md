@@ -12,7 +12,7 @@ Audio recordings from [https://www.voicy.network/pages/among-us](https://www.voi
 
 ## Screenshot
 
-![Screenshot of UI](media/IMG_0976.PNG)
+<img src="media/IMG_0976.PNG" width="50%" />
 
 ## Usage
 
@@ -20,13 +20,13 @@ This was built for personal use, but anyone is welcome to use this for hosting t
 
 ### 1. Configure the game
 
-You may want to modify the following properties located in `src/index.js`:
+You may want to modify the following properties located in [`src/index.js`](https://github.com/michaelgira23/among-us-real-life/blob/master/src/index.js):
 
-`TASKS` - An array of strings that consist of all possible tasks. These will be randomly assigned to players.
+[`TASKS`](https://github.com/michaelgira23/among-us-real-life/blob/master/src/index.js#L14) - An array of strings that consist of all possible tasks. These will be randomly assigned to players.
 
-`N_TASKS` - Number of tasks to assign each player
+[`N_TASKS`](https://github.com/michaelgira23/among-us-real-life/blob/master/src/index.js#L31) - Number of tasks to assign each player
 
-`N_IMPOSTORS` - Number of impostors to assign each round
+[`N_IMPOSTORS`](https://github.com/michaelgira23/among-us-real-life/blob/master/src/index.js#L32) - Number of impostors to assign each round
 
 ### 2. Start the backend
 
